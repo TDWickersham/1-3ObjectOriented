@@ -7,11 +7,11 @@ using namespace std;
 class GameObject
 {
 protected:
-	float positionX;
-	float positionY;
+	
 public:
 	std::string name;
-
+	float positionX;
+	float positionY;
 
 	bool enabled;
 

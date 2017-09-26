@@ -115,6 +115,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="emitter.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Officer.cpp" />
     <ClCompile Include="Partical.cpp" />
@@ -123,6 +124,7 @@
     <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="emitter.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="Officer.h" />
     <ClInclude Include="Partical.h" />

@@ -5,6 +5,7 @@
 #include "Player.h"
 #include "sfwdraw.h"
 #include "Partical.h"
+#include "emitter.h"
 
 
 using namespace std;
@@ -39,6 +40,8 @@ int main()
 	it.x = 400;
 	it.y = 300;
 
+	Emitter wee;
+	wee.spawnInterval = 1;
 	while (sfw::stepContext())
 	{
 		it.update();
@@ -49,6 +52,9 @@ int main()
 
 		zoom.update();
 		zoom.draw();
+
+		wee.update();
+		wee.draw();
 		if (it.x < 0)
 		{
 			it.x = 800;
