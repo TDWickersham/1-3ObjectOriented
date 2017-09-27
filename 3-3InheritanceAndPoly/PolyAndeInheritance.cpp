@@ -6,6 +6,7 @@
 #include "sfwdraw.h"
 #include "Partical.h"
 #include "emitter.h"
+#include <ctime>
 
 
 using namespace std;
@@ -29,7 +30,7 @@ int main()
 	you.draw();*/
 
 	sfw::initContext(800, 600, "My Game");
-
+	srand(time(NULL));
 	BaseParticle pew(100, 100, 5, 5);
 	BoxPartical zoom(50, 50, 5, 10, 20);
 
@@ -41,7 +42,7 @@ int main()
 	it.y = 300;
 
 	Emitter wee;
-	wee.spawnInterval = 1;
+	wee.spawnInterval = .2f;
 	while (sfw::stepContext())
 	{
 		it.update();
@@ -53,7 +54,7 @@ int main()
 		zoom.update();
 		zoom.draw();
 
-		wee.update();
+		wee.update(it);
 		wee.draw();
 		if (it.x < 0)
 		{

@@ -1,5 +1,6 @@
 #include "Partical.h"
 #include "sfwdraw.h"
+#include "Player.h"
 
 
 
@@ -13,13 +14,34 @@ BaseParticle::BaseParticle(float posX, float posY, float speedx, float speedy)
 	positionY = posY;
 	speedX = speedx;
 	speedY = speedy;
+	lifetime = 6;
 }
 
 void BaseParticle::update()
 {
 	positionX = positionX + speedX;
 	positionY = positionY + speedY;
-
+	if (positionX < 0)
+	{
+		positionX = 800;
+	}
+	if (positionY < 0)
+	{
+		positionY = 600;
+	}
+	if (positionX > 800)
+	{
+		positionX = 0;
+	}
+	if (positionY > 600)
+	{
+		positionY = 0;
+	}
+	lifetime -= sfw::getDeltaTime();
+	if (lifetime < 0)
+	{
+		enabled = false;
+	}
 }
 
 void BaseParticle::draw()

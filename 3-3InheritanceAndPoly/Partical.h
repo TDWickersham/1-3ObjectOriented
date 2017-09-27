@@ -12,6 +12,7 @@ public:
 	BaseParticle(float posX, float posY, float speedx, float speedy);
 	virtual void update() override;
 	virtual void draw() override;
+	float lifetime;
 };
 
 class BoxPartical : public BaseParticle

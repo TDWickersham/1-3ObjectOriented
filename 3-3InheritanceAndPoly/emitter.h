@@ -1,6 +1,7 @@
 #pragma once
 #include "GameObject.h"
 #include "Partical.h"
+#include "Player.h"
 
 class Emitter : public GameObject
 {
@@ -8,12 +9,12 @@ class Emitter : public GameObject
 
 public:
 	Emitter();
-	BaseParticle particles[100];
+	BaseParticle particles[300];
 
 	int particleId;
 
 	float spawnInterval;
 
-	virtual void update();
+	virtual void update(player p);
 	virtual void draw();
 };

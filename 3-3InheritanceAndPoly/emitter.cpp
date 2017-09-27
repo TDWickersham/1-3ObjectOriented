@@ -1,9 +1,10 @@
 #include "emitter.h"
 #include "sfwdraw.h"
+#include <random>
 
 Emitter::Emitter()
 {
-	for (int i = 0; i < 100; ++i)
+	for (int i = 0; i < 300; ++i)
 	{
 		particles[i].enabled = false;
 	}
@@ -11,24 +12,24 @@ Emitter::Emitter()
 	spawnAccumulator = 0.0f;
 }
 
-void Emitter::update()
+void Emitter::update(player p)
 {
 	spawnAccumulator += sfw::getDeltaTime();
 
 	if (spawnAccumulator > spawnInterval)
 	{
-		for (int i = 0; i < 100; ++i)
+		for (int i = 0; i < 300; ++i)
 		{
 			if (particles[i].enabled == false)
 			{
 				BaseParticle& baby = particles[i];
 
-				baby.positionX = 400;
-				baby.positionY = 300;
+				baby.positionX = p.x;
+				baby.positionY = p.y;
 
-				baby.speedX = 0;
+				baby.speedX = rand()%6+1;
 				baby.speedY = 2;
-
+				baby.lifetime = 6;
 				baby.enabled = true;
 
 				spawnAccumulator = 0.0f;
@@ -37,7 +38,7 @@ void Emitter::update()
 		}
 	}
 
-	for (int i = 0; i < 100; ++i)
+	for (int i = 0; i < 300; ++i)
 	{
 		if (particles[i].enabled == true)
 		{
@@ -48,7 +49,7 @@ void Emitter::update()
 
 void Emitter::draw()
 {
-	for (int i = 0; i < 100; ++i) 
+	for (int i = 0; i < 300; ++i) 
 	{
 		if (particles[i].enabled)
 		{
