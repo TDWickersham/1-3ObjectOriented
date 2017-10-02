@@ -6,7 +6,7 @@
 int main()
 {
 	float timeSec;
-	std::cout << "how long do you want your timer?" << std::endl;
+	std::cout << "how long do you want your timer? (this will be in seconds)" << std::endl;
 
 	std::cin >> timeSec;
 
