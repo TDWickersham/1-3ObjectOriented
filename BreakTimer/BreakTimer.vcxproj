@@ -116,9 +116,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BreakTimer.cpp" />
+    <ClCompile Include="emitter.cpp" />
+    <ClCompile Include="Partical.cpp" />
     <ClCompile Include="Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="emitter.h" />
+    <ClInclude Include="Partical.h" />
     <ClInclude Include="Timer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
